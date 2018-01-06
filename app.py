@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html' ,
                             page_title = 'NLP Project' , brandName = 'NLP Final Project' ,
-                            gitHubPage = 'https://github.com/poynt2005' , brandLogoText = 'Pinyin')
+                            gitHubPage = 'https://github.com/poynt2005/finalNLPProject' , brandLogoText = 'Pinyin')
 
 @app.route('/getQuery' , methods = ['POST'])
 def getQuery():
