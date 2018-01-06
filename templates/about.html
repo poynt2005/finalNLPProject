@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta charset="UTF-8">
+    <title> {{ page_title }} </title>
+
+    <!--- stylesheet file --->
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aboutStyle.css') }}" >
+    <script>
+      var author = "{{ project_author }}";
+      setTimeout(function(){alert("作者 : " + author);} , 3200);
+    </script>
+  </head>
+  <body>
+    <div class="about-content">
+      <div class="inner fadder">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <h2>此為NLP的<strong>期末Project</strong></h2>
+              <ol>
+                <li>
+                  概觀 :
+                  <ol type="a">
+                    <li>使用非常簡易的HMM模型轉換拼音</li>
+                    <li>模型是來自python斷詞工具<a href="https://github.com/fxsjy/jieba" target="_blank" title="GitHub Page">"Jieba"</a>的詞庫</li>
+                    <ul>
+                      <li>該詞庫是以[詞語 詞頻 詞性]的形式存於"dict.txt.big"的檔案中，並蒐集了大約50萬筆資料 (例如 : [一一對應 43 l] ，代表"一一對應詞頻是43，l是詞性但是不知道是啥詞性...")</li>
+                      <li>目前這個project用到的只有詞和詞頻而已</li>
+                      <li>
+                        之前有參考過<a href="http://ckip.iis.sinica.edu.tw/CKIP/publication.htm" target="_blank">中研院</a>的語料庫，
+                        不過似乎需要經過學術申請才能下載；以及中國的<a href="http://www.aihanyu.org/cncorpus/index.aspx" target="_blank">语料库在线</a>，
+                        不過詞庫內容有點少，目前就用jieba的庫，不會太多也不會太少，不過缺點就是它是簡體和繁體混雜的...
+                      </li>
+                      <li>有上網搜尋一些處理拼音的project，很多也是使用這種HMM模型去做，不過都超級複雜，目前就是用我們理解部份去做了...</li>
+                    </ul>
+                    <li>現在只有實作算是最簡單的功能，可簡單判斷拼音轉成漢字，斷詞功能需要一些蠻深奧的演算法 GG</li>
+                    <li>網頁部分是因為我覺得這樣看起來比較好操作，感覺好於python內建的tkinter介面</li>
+                    <li>目前只有在windows上測過，還沒在其他平台上跑</li>
+                    <li>詳細請參考<a href="{{ project_page }}" target="_blank"><strong>GitHub</strong></a>頁面</li>
+                  </ol>
+                </li>
+
+                <li>
+                  程式 :
+                  <ol type="a">
+                    <li>
+                      python & 後端部分:
+                      <ul>
+                        <li>jsonDataLoder讀出詞庫，並將詞庫中詞頻計算概率後存入json檔案裡面</li>
+                        <li>trainer建立wordNode物件並讀取json檔案，將概率相乘計算得出最有可能的結果</li>
+                        <li>pinyinTranslate算是main function，將input輸入、處理output，且輸出結果至flask的getQuery路由</li>
+                        <li>
+                          使用的第三方package:
+                          <ul>
+                            <li>flask : 用於網頁框架(django實在有點複雜)</li>
+                            <li>pypinyin : 將jieba詞庫的中文轉成英文拼音</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      前端部分:
+                      <ul>
+                        <li>使用bootstrap3當作介面(比較好整合)，jquery ui顯示結果</li>
+                        <li>效果 : wow.js、spinner.js 以及css等</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+              <div id="aHrefdiv">
+                <a href="../" class="btn btn-primary" style="font-size:12px;">返回至主頁</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="myFooter">
+      <nav class="nav navbar-default navbar-fixed-bottom">
+        <div class="container">
+          <div class="footer-href"><a href="../">返回至Project頁面</a></div>
+        </div>
+      </nav>
+    </div>
+  </body>
+
+</html>

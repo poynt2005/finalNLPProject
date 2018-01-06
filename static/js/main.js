@@ -29,6 +29,8 @@ $(document).ready(function(){
 
   });
 
+
+
   //show jquery ui dialog
   function showdialog(dataObj , strError){
 		let result = new String("");
@@ -46,12 +48,19 @@ $(document).ready(function(){
     }
 
 		$("#result_string").html(result);
-		
+
 		var dialogWidth = $(window).width() > 800 ? 800 : 'auto';
-		
+
 		$(function(){
 			$( "#dialog" ).dialog({
 				width: dialogWidth,
+        /*buttons:[{
+                    text : "關閉視窗",
+                    class : "btn btn-danger dialogCloseBtn",
+                    click : function(){
+                      $( "#dialog" ).dialog("close");
+                    }
+                }],*/
 				show:{
 					effect: "puff",
 					duration: 600

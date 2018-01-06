@@ -34,7 +34,6 @@ body {
 }
 
 /* input text warpper */
-
 #inputStr {
   opacity: 0.3;
   border-radius: 10px;
@@ -114,6 +113,7 @@ body {
   100% {opacity: 1px;}
 }
 
+/* jquery ui dialog css*/
 .ui-dialog .ui-dialog-content {
   font-family: Microsoft JhengHei;
   font-size: 20px;
@@ -124,6 +124,23 @@ body {
  .ui-dialog .ui-dialog-titlebar {
    font-size: 25px;
  }
+
+ /*.ui-dialog .ui-dialog-buttonpane {
+   border-width: 0 !important;
+   padding : 0 0 !important;
+   margin: 0 0 !important;
+   background: rgba(0,0,0,.5);
+   text-align: center;
+ }
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+  float: none;
+}
+ .dialogCloseBtn {
+   font-size: 15px;
+   padding: 5px 15px;
+ }
+ */
 
 /* screen viewpoint */
 

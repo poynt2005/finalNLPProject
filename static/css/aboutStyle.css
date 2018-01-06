@@ -1,0 +1,86 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow: scroll;
+}
+
+body {
+  font-family: Microsoft JhengHei;
+  font-size: 16px;
+  background: #ccddff;
+  background: -webkit-linear-gradient(#ffffff, #ccddff); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#ffffff, #ccddff); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#ffffff, #ccddff); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#ffffff, #ccddff); /* Standard syntax */
+}
+
+/* main content */
+.about-content {
+    height: 100%;
+    min-height: 100%;
+}
+
+.inner {
+  top: 18%;
+  position: relative;
+}
+
+/* footer */
+.footer-href {
+  text-align: center;
+}
+
+.footer-href a {
+  color: #2e2eb8;
+  font-size: 25px;
+  text-decoration: none;
+}
+#aHrefdiv {
+  display: none;
+}
+
+.navbar-default {
+  background: #66ccff;
+}
+
+/*css animate */
+.fadder {
+  animation-name: myFade;
+  -webkit-animation-name: myFade;
+	animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+	/*animation-timing-function: ease;*/
+}
+
+@keyframes myFade {
+  0%   {opacity: 0; transform: translateY(-5%);}
+  50%  {opacity: 0.5px;}
+  100% {opacity: 1px; transform: translateY(0);}
+}
+@-webkit-keyframes myFade {
+  0%   {opacity: 0; transform: translateY(-5%);}
+  50%  {opacity: 0.5px;}
+  100% {opacity: 1px; transform: translateY(0);}
+}
+
+/* media query */
+@media screen and (max-width: 500px) {
+  body {
+    font-size: 13px;
+    padding-bottom: 0;
+  }
+  .inner {
+    top: 8%;
+  }
+  .myFooter {
+    display: none;
+  }
+  .nav {
+    display: none;
+  }
+  #aHrefdiv {
+    text-align: center;
+    display: block;
+  }
+}

@@ -24,6 +24,13 @@ def getQuery():
             return jsonify(result.wordProb)
         else:
             return('error')
+
+@app.route('/about' , methods = ['GET'])
+def about_page():
+    if request.method == 'GET':
+        return render_template('about.html' , page_title = 'About Page' , project_author = '仲皓瑋、陳昱平' ,
+                                project_page = 'https://github.com/poynt2005/finalNLPProject')
+
 if __name__ == "__main__":
     app.debug = True
     app.run(host='0.0.0.0')
