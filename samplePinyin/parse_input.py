@@ -4,4 +4,5 @@ def parseInput(inputStr):
 
 if __name__ == '__main__':
     s = 'jin tian tian qi bu cuo'
+    s = '      '
     print(parseInput(s))

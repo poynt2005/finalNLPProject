@@ -27,6 +27,20 @@ body {
 }
 
 /* footer */
+.myFooter {
+	opacity: 0.3;
+}
+
+.myFooter:hover {
+	animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+	animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
+	animation-timing-function: ease;
+	
+	opacity: 1;
+}
+
 .footer-href {
   text-align: center;
 }
@@ -40,6 +54,8 @@ body {
   display: none;
 }
 
+
+/* footer navbor */
 .navbar-default {
   background: #66ccff;
 }
@@ -50,9 +66,18 @@ body {
   -webkit-animation-name: myFade;
 	animation-duration: 3s;
   -webkit-animation-duration: 3s;
-	/*animation-timing-function: ease;*/
+	animation-timing-function: ease;
 }
 
+.fadeOutFooter {
+	animation-name: fadeOut;
+  -webkit-animation-name: fadeOut;
+	animation-duration: 0.8s;
+  -webkit-animation-duration: 0.8s;
+	animation-timing-function: ease;
+}
+
+/* keyframes */
 @keyframes myFade {
   0%   {opacity: 0; transform: translateY(-5%);}
   50%  {opacity: 0.5px;}
@@ -63,6 +88,41 @@ body {
   50%  {opacity: 0.5px;}
   100% {opacity: 1px; transform: translateY(0);}
 }
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.3;
+	}
+}
+@-webkit-keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.3;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0.3;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0.3;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
 
 /* media query */
 @media screen and (max-width: 500px) {
