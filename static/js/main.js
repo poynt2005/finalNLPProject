@@ -25,7 +25,7 @@ $(document).ready(function(){
         $("#inputStr").focus();
     }
     else
-      sentQuery(inputStrValue);
+      sentQuery(inputStrValue.toLowerCase());
 
   });
 
