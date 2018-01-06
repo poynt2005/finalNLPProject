@@ -46,9 +46,12 @@ $(document).ready(function(){
     }
 
 		$("#result_string").html(result);
+		
+		var dialogWidth = $(window).width() > 800 ? 800 : 'auto';
+		
 		$(function(){
 			$( "#dialog" ).dialog({
-				width: 800,
+				width: dialogWidth,
 				show:{
 					effect: "puff",
 					duration: 600
