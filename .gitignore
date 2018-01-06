@@ -1,0 +1,4 @@
+NLPProj/
+samplePinyin/__pycache__/
+samplePinyin/jsonDataLoder/__pycache__/
+samplePinyin/trainer/__pycache__/

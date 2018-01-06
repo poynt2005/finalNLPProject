@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta charset="UTF-8">
+
+    <title>{{ page_title }}</title>
+
+    <!--- google font --->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+
+    <!---- css file ---->
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/jquery/jquery-ui.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/wowJS/animate.css') }}" >
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" >
+
+  </head>
+
+  <body>
+
+
+    <nav class = "nav navbar-inverse navbar-fixed-top">
+        <div class = "container">
+          <div class="navbar-header">
+            <button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#mynavbar">
+              <span class = "sr-only">Toggle navigation</span>
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+              <span class = "icon-bar"></span>
+            </button>
+            <a class = "navbar-brand" href = "."><strong>{{ brandName }}</strong></a>
+          </div>
+
+          <div class = "collapse navbar-collapse" id = "mynavbar">
+            <ul class = "nav navbar-nav navbar-right">
+              <li><a href = "javascript:void(window.history.back())">Back</a></li>
+              <li><a href = "javascript:void(alert('作者 : 仲皓瑋、陳昱平'))">About</a></li>
+              <li><a href = "{{ gitHubPage }}" target="_blank">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+
+
+    <div class = "main-content">
+
+
+      <div class="inner">
+        <div class="container">
+          <span class = "fadeMyLogo" id="title-span">{{ brandLogoText }}</span>
+          <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+              <div class="">
+                <h2 class="fadeMyAnimate" id="tips">請輸入文字拼音</h3>
+                <div class="form-group wow rotateIn">
+                  <input type="text" class="form-control" id="inputStr" placeholder="請在此輸入(拼音使用空格隔開)">
+                </div>
+                <a class="btn btn-primary wow fadeInLeft" id="btn-clicked" href="javascript:void(0)">確認</a>
+                <a class="btn btn-danger wow fadeInRight" href="javascript:(0)" onclick="document.getElementById('inputStr').value=''">清除</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dialog" title="可能的情況是(由大到小)">
+			<p id = "result_string"></p>
+		</div>
+
+
+  <!--- javascript --->
+    <script src="{{ url_for('static', filename='lib/jquery/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/jquery/jquery-ui.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/spin.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lib/wowJS/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+
+
+</html>

@@ -1,0 +1,143 @@
+/* body css */
+html, body {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,.5);
+}
+
+body {
+  padding-top: 50px;
+  text-align: center;
+  color: white;
+  font-family: Microsoft JhengHei;
+
+}
+
+/* main site wrapper */
+.main-content {
+  height: 100%;
+  min-height: 100%;
+}
+
+
+/* main content wrapper */
+.inner {
+  top: 20%;
+  position: relative;
+}
+
+/* logo css */
+.logo-content {
+   float: left;
+
+}
+
+/* input text warpper */
+
+#inputStr {
+  opacity: 0.3;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#inputStr:hover {
+  opacity: 1;
+}
+
+#inputStr:focus {
+  opacity: 1;
+}
+
+#title-span {
+  font-family: 'Amatic SC', cursive;
+  font-size: 150px;
+  text-shadow: 3px 2px 3px #f2f2f2;
+  letter-spacing: 8px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+
+/* animate css */
+.fadeMyAnimate {
+  animation-name: myFade;
+  -webkit-animation-name: myFade;
+	animation-duration: 2.5s;
+  -webkit-animation-duration: 2.5s;
+	animation-timing-function: ease;
+}
+
+.fadeMyLogo {
+  animation-name: fadeLogo;
+  -webkit-animation-name: fadeLogo;
+	animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes myFade {
+    0%   {opacity: 0; transform: translateY(-8px);}
+    25%  {opacity: 0.09px;}
+    50%  {opacity: 0.2px;}
+    75%  {opacity: 0.4px;}
+    100% {opacity: 0.8px; transform: translateY(0px);}
+}
+
+@-webkit-keyframes myFade {
+  0%   {opacity: 0; transform: translateY(-8px);}
+  25%  {opacity: 0.09px;}
+  50%  {opacity: 0.2px;}
+  75%  {opacity: 0.4px;}
+  100% {opacity: 0.8px; transform: translateY(0px);}
+}
+
+@keyframes fadeLogo {
+  0%   {opacity: 0;}
+  50%  {opacity: 0.5px;}
+  100% {opacity: 1px;}
+}
+
+@-webkit-keyframes fadeLogo {
+  0%   {opacity: 0;}
+  50%  {opacity: 0.5px;}
+  100% {opacity: 1px;}
+}
+
+.ui-dialog .ui-dialog-content {
+  font-family: Microsoft JhengHei;
+  font-size: 20px;
+  color: white;
+  background: rgba(0,0,0,.5);
+ }
+
+ .ui-dialog .ui-dialog-titlebar {
+   font-size: 25px;
+ }
+
+/* screen viewpoint */
+
+@media screen and (max-width: 500px) {
+  #title-span {
+    font-size: 90px;
+  }
+  .inner h2 {
+    font-size: 25px;
+  }
+  .inner a {
+    font-size: 10px;
+  }
+  .btn {
+    padding: 8px 15px;
+  }
+}
