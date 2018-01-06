@@ -13,7 +13,7 @@
 
 ```
 0. git clone "https://github.com/poynt2005/finalNLPProject.git" && cd finalNLPProject/
-    (PS : 請在finalNLPProject創建一個Virtualenv，在該虛擬環境下安裝flask套件)
+    (PS : 請在finalNLPProject創建一個名為"NLPProj"的Virtualenv，在該虛擬環境下安裝flask套件)
 1. windows : 直接打開startServer.bat
 2. 至local端的port 5000
 3. 輸入拼音，以逗號隔開
