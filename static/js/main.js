@@ -116,6 +116,7 @@ $(document).ready(function(){
       },
 
       error : function(err){
+		spinner.spin();
         console.log(err);
       }
     });
