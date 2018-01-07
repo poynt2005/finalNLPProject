@@ -30,10 +30,19 @@
             </button>
             <a class = "navbar-brand" href = "."><strong>{{ brandName }}</strong></a>
           </div>
-
           <div class = "collapse navbar-collapse" id = "mynavbar">
             <ul class = "nav navbar-nav navbar-right">
               <li><a href = "javascript:void(window.history.back())">Back</a></li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle">Accuracy <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="inputAccuracy" placeholder="精準值(預設值:50)">
+                    </div>
+                  </li>
+                </ul>
+              </li>
               <li><a href = "/about">About</a></li>
               <li><a href = "{{ gitHubPage }}" target="_blank">GitHub</a></li>
             </ul>

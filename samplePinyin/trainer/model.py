@@ -1,7 +1,8 @@
 class wordNode:
-    def __init__(self , pinyin , wordProb = None):
+    def __init__(self , pinyin , wordProb = None , accuracy = 50):
         self.pinyin = pinyin
 
+        self.accuracy = accuracy
         if not wordProb:
             self.wordProb = []
         else:
@@ -28,22 +29,38 @@ class wordNode:
     def __mul__(self , other):
         res = []
         if isinstance(other , list):
-            for i in self.wordProb:
-                for j in other:
-                    newWord = str(list(i.keys())[0]) + str(list(j.keys())[0])
-                    newProb = float(list(i.values())[0]) * float(list(j.values())[0])
+            for i in range(len(self.wordProb)):
+                if i >= self.accuracy:
+                    break;
+                for j in range(len(other)):
+                    if j >= self.accuracy:
+                        break;
+                    newWord = str(list(self.wordProb[i].keys())[0]) + str(list(other[j].keys())[0])
+                    newProb = float(list(self.wordProb[i].values())[0]) * float(list(other[j].values())[0])
                     res.append({newWord : newProb})
 
             res = sorted(res , key = lambda x : list(x.values())[0] , reverse = True)
-            return res
+            return wordNode('abc' , res)
         else:
-            for i in self.wordProb:
-                for j in other.wordProb:
-                    newWord = str(list(i.keys())[0]) + str(list(j.keys())[0])
-                    newProb = float(list(i.values())[0]) * float(list(j.values())[0])
+            for i in range(len(self.wordProb)):
+                if i >= self.accuracy:
+                    break;
+                for j in range(len(other.wordProb)):
+                    if j >= self.accuracy:
+                        break;
+                    newWord = str(list(self.wordProb[i].keys())[0]) + str(list(other.wordProb[j].keys())[0])
+                    newProb = float(list(self.wordProb[i].values())[0]) * float(list(other.wordProb[j].values())[0])
                     res.append({newWord : newProb})
             res = sorted(res , key = lambda x : list(x.values())[0] , reverse = True)
             return wordNode('abc' , res)
+
+    #get the smellest prob of the wordNode
+    def getSmallest(self):
+        return float(list(self.wordProb[-1].values())[0])
+
+    #get the biggest prob of the wordNode
+    def getBiggest(self):
+        return float(list(self.wordProb[0].values())[0])
 
     #return a formatted string of result
     def formatResult(self):
@@ -66,6 +83,7 @@ class wordNode:
                 detectProb.append(currentProb)
                 res.append({currentWord : currentProb})
         return wordNode('abc' , res)
+
 
 
 

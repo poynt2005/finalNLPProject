@@ -17,11 +17,16 @@ def index():
 def getQuery():
     if request.method == 'POST':
         param = request.form['param']
+        accuracyNum = 50
+        try:
+            accuracyNum = int(request.form['accuracyNum'])
+        except:
+            accuracyNum = 50
 
-        result = pinyinTranslate(param)
+        result = pinyinTranslate(param , accuracyNum)
 
         if not result == 'inputError':
-            return jsonify(result.wordProb)
+            return jsonify(result)
         else:
             return('error')
 

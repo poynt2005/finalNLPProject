@@ -12,6 +12,15 @@ $(document).ready(function(){
   //check input string
   $("#btn-clicked").click(function(){
     var inputStrValue = $("#inputStr").val();
+    var inputAccuracy = parseInt($("#inputAccuracy").val());
+
+    var queryAccuracy = 50;
+
+    if(!isNaN(inputAccuracy))
+      if(inputAccuracy)
+        queryAccuracy = inputAccuracy;
+    else
+      $("#inputAccuracy").val("");
 
     if(!inputStrValue){
       alert("請輸入拼音!!");
@@ -25,7 +34,7 @@ $(document).ready(function(){
         $("#inputStr").focus();
     }
     else
-      sentQuery(inputStrValue.toLowerCase());
+      sentQuery(inputStrValue.toLowerCase() , queryAccuracy);
 
   });
 
@@ -74,7 +83,7 @@ $(document).ready(function(){
 	};
 
   //ajax call server
-  function sentQuery(inputStr){
+  function sentQuery(inputStr , queryAccuracy){
 
       //spinner
       var opts = {
@@ -108,7 +117,9 @@ $(document).ready(function(){
     $.ajax({
       url : "/getQuery",
       type : "POST",
-      data  : { 'param' : inputStr },
+      data  : { 'param' : inputStr,
+                'accuracyNum' : queryAccuracy
+              },
 
       beforeSend : function(mes){
         spinner.spin(target);
